@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gachidata.dong.board.mapper.BoardMapper">
+	
+	<select id="boardCount" resultType="int">
+		SELECT
+			COUNT(*) 
+		FROM SB_BOARD
+	</select>
+	
+	<select id="boardList" resultType="com.gachidata.dong.board.domain.BoardVO">
+		SELECT
+			* 
+		FROM SB_BOARD
+		ORDER BY BNO DESC
+	</select>
+	
+	<select id="boardDetail" parameterType="int" resultType="com.gachidata.dong.board.domain.BoardVO">
+		SELECT 
+			*
+		FROM SB_BOARD
+		WHERE 
+			BNO = #{bno}
+	</select>
+	
+	<insert id="boardInsert" parameterType="com.gachidata.dong.board.domain.BoardVO">
+		INSERT INTO 
+			SB_BOARD (BNO, SUBJECT, CONTENT, WRITER, REG_DATE)
+		VALUES(SB_BOARD_SEQ.NEXTVAL, #{subject}, #{content}, #{writer}, SYSDATE)
+		<selectKey keyProperty="bno" resultType="Integer" order="AFTER">
+			SELECT SB_BOARD_SEQ.CURRVAL FROM DUAL
+		</selectKey>
+	</insert>
+	
+	<insert id="fileInsert" parameterType="com.gachidata.dong.board.domain.FileVO">
+		INSERT INTO
+			SB_FILES (FNO, BNO, FILE_NAME, FILE_ORINAME, FILE_URL)
+		VALUES(SB_FILES_FNO.NEXTVAL, #{bno}, #{file_name}, #{file_oriname}, #{file_url})
+	</insert>
+	
+	
+	<update id="boardUpdate" parameterType="com.gachidata.dong.board.domain.BoardVO">
+		UPDATE SB_BOARD 
+			SET
+		<if test="subject != null">
+			SUBJECT = #{subject}	
+		</if>
+		<if test="subject != null and content != null"> , </if>
+		<if test="content != null">
+			CONTENT = #{content}
+		</if>		
+		WHERE BNO = #{bno}
+	</update>
+	
+	<delete id="boardDelete" parameterType="int">
+		DELETE SB_BOARD WHERE BNO = #{bno} 
+	</delete>
+	
+	<select id="fileDetail" parameterType="int" resultType="com.gachidata.dong.board.domain.FileVO">
+		SELECT 
+			* 
+		FROM SB_FILES
+		WHERE BNO = #{bno}
+	</select>
+	
+</mapper>

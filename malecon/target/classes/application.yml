@@ -1,0 +1,14 @@
+gachi:
+  profile:
+    name: gachidata2
+    web: www.gachidata.com
+spring:
+  mustache:
+    suffix: .jsp
+---
+spring:
+  profiles: dev
+
+---
+spring:
+  profiles: prod
