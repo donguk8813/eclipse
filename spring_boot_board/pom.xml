@@ -9,7 +9,7 @@
 		<version>2.3.1.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.gachidata</groupId>
+	<groupId>com.gachidata.dong</groupId>
 	<artifactId>spring_boot_board</artifactId>
 	<version>0.1</version>
 	<packaging>war</packaging>
@@ -49,10 +49,11 @@
 
 		<!-- JSTL -->
 		<dependency>
-			<groupId>jstl</groupId>
+			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+
 		
 		<!-- Multipart File Up&Download  -->
 		<dependency>
@@ -85,6 +86,13 @@
             <version>3.4.2</version>
         </dependency>
 
+
+		<!-- oracle jdbc -->
+		<dependency>
+			<groupId>com.oracle.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>12.2.0.1</version>
+		</dependency>
 		
 	
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter -->
