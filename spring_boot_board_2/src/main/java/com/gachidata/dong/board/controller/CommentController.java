@@ -30,7 +30,7 @@ public class CommentController {
 	@GetMapping("/list/{bno}")
 	@ResponseBody
 	public List<CommentVO> commentList(@PathVariable int bno) throws Exception{
-		logger.info("bno : {}",bno);
+		logger.info("bno : {} {}",bno, "dong");
 		return commentService.commentList(bno);
 	}
 	
