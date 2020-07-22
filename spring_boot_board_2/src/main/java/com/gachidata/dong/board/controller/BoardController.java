@@ -36,7 +36,8 @@ public class BoardController {
 	@Value("${file.upload.directory}")
 	private  String uploadFileDir;
 	
-	@Resource(name="com.gachidata.dong.board.service.BoardService")
+	//@Resource(name="com.gachidata.dong.board.service.BoardService")
+	@Resource
 	BoardService boardService;
 	
 	@GetMapping("/list")

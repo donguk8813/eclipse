@@ -10,7 +10,6 @@ import com.gachidata.dong.board.domain.FileVO;
 
 @Mapper
 //해당 클래스가 데이터베이스에 접근하는 클래스임을 명시
-@Repository("com.gachidata.dong.board.mapper.BoardMapper")
 public interface BoardMapper {
 	
 	//게시글 개수

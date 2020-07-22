@@ -2,14 +2,15 @@ package com.gachidata.dong.board.domain;
 
 import java.util.Date;
 
-import org.apache.ibatis.type.Alias;
-
 import lombok.Getter;
 import lombok.Setter;
-//@Alias("BoardVO")
+import lombok.ToString;
+
+
 @Setter
 @Getter
-public class BoardVO {
+@ToString
+public class  BoardVO{
 	
 	private int bno;
 	private String subject;

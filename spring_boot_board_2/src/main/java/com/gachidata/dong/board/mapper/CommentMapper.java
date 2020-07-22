@@ -2,11 +2,13 @@ package com.gachidata.dong.board.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import com.gachidata.dong.board.domain.CommentVO;
 
-@Repository("com.gachidata.dong.board.mapper.CommentMapper")
+@Mapper
+//@Repository("com.gachidata.dong.board.mapper.CommentMapper")
 public interface CommentMapper {
 	//댓글 개수
 	public int commentCount() throws Exception;

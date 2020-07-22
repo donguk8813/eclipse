@@ -10,10 +10,10 @@ import com.gachidata.dong.board.domain.BoardVO;
 import com.gachidata.dong.board.domain.FileVO;
 import com.gachidata.dong.board.mapper.BoardMapper;
 
-@Service("com.gachidata.dong.board.service.BoardService")
+@Service
 public class BoardService {
 	
-	@Resource(name="com.gachidata.dong.board.mapper.BoardMapper")
+	@Resource
 	BoardMapper boardMapper;
 	
 	public List<BoardVO> boardList() throws Exception{

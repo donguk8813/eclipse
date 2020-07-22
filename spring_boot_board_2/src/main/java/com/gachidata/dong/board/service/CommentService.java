@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import com.gachidata.dong.board.domain.CommentVO;
 import com.gachidata.dong.board.mapper.CommentMapper;
 
-@Service("com.gachidata.dong.board.service.CommentService")
+@Service
 public class CommentService {
 	
-	@Resource(name="com.gachidata.dong.board.mapper.CommentMapper")
+	@Resource
 	private CommentMapper commentMapper;
 	
 	public List<CommentVO> commentList(int bno) throws Exception{
